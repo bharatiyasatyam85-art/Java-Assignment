@@ -1,0 +1,27 @@
+import java.util.LinkedList;
+
+class ArtifactTracker {
+    public static void main(String[] args) {
+
+        // Create LinkedList
+        LinkedList<String> artifacts = new LinkedList<>();
+
+        // Add three artifacts
+        artifacts.add("Golden Mask");
+        artifacts.add("Ancient Vase");
+        artifacts.add("Royal Sword");
+
+        // Add artifact at beginning
+        artifacts.addFirst("Diamond Necklace");
+
+        // Remove one artifact
+        artifacts.remove("Ancient Vase");
+
+        // Display updated list
+        System.out.println("Updated Artifact List: " + artifacts);
+
+        // Display first and last artifact
+        System.out.println("First Artifact: " + artifacts.getFirst());
+        System.out.println("Last Artifact: " + artifacts.getLast());
+    }
+}
