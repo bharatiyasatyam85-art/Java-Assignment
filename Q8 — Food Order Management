@@ -1,0 +1,29 @@
+import java.util.LinkedList;
+
+public class FoodOrder {
+    public static void main(String[] args) {
+
+        // Create LinkedList
+        LinkedList<String> foodItems = new LinkedList<>();
+
+        // Add items at the beginning
+        foodItems.addFirst("Pizza");
+        foodItems.addFirst("Burger");
+        foodItems.addFirst("Pasta");
+        foodItems.addFirst("Sandwich");
+
+        // Display first item
+        System.out.println("First Food Item: "
+                           + foodItems.getFirst());
+
+        // Remove last item
+        foodItems.removeLast();
+
+        // Display remaining food items
+        System.out.println("Food Items:");
+
+        for (String food : foodItems) {
+            System.out.println(food);
+        }
+    }
+}
