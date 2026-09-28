@@ -1,0 +1,39 @@
+class ParkingArea extends Thread {
+
+    String vehicleNo;
+
+    static int availableSlots = 1;
+
+    static synchronized void parkVehicle(String vehicleNo) {
+
+        if (availableSlots > 0) {
+            System.out.println(
+                "Vehicle " + vehicleNo + " parked successfully."
+            );
+
+            availableSlots--;
+        } else {
+            System.out.println(
+                "No parking slot available for vehicle " + vehicleNo
+            );
+        }
+    }
+
+    @Override
+    public void run() {
+        parkVehicle(vehicleNo);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        ParkingArea v1 = new ParkingArea();
+        v1.vehicleNo = "UP11K2026";
+        v1.start();
+
+        ParkingArea v2 = new ParkingArea();
+        v2.vehicleNo = "UK08K2020";
+        v2.start();
+    }
+}
